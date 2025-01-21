@@ -3,6 +3,7 @@
 namespace Insenseanalytics\NovaBarMetrics;
 
 use Laravel\Nova\Metrics\Partition;
+use Laravel\Nova\Metrics\PartitionResult;
 
 abstract class BarChartMetric extends Partition
 {
@@ -22,7 +23,7 @@ abstract class BarChartMetric extends Partition
 	 *
 	 * @return \Insenseanalytics\NovaBarMetrics\BarChartMetricResult
 	 */
-	public function result(array $value)
+	public function result(array $value): PartitionResult
 	{
 		return new BarChartMetricResult($value);
 	}
